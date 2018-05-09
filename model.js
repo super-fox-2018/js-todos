@@ -60,7 +60,7 @@ class Model {
     
     static WriteData(todoFile,callback){
         todoFile = JSON.stringify(todoFile,null,2)
-        fs.writefileSync('data.json',todoFile,'utf-8')
+        fs.writeFileSync('data.json',todoFile,'utf-8')
         if(callback !== undefined) callback(this.readfile())
     }
 
