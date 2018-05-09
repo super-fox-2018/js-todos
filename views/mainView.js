@@ -1,6 +1,6 @@
 class View {
   static showHelp(options) {
-    console.log('Usage: node [filename].js [options] [ task_id | task_content | ]\n');
+    console.log('Usage: node [filename].js [options] [ task_id | task_content | tag_name ]\n');
     console.log('Options : \n');
     for (let i = 0; i < options.length; i += 1) {
       const option = options[i];

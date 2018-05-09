@@ -15,7 +15,11 @@
     "status": true,
     "createdAt": 1525865793415,
     "completedAt": 1525866020270,
-    "tags": [],
+    "tags": [
+      "minum",
+      "kenyang",
+      "capek"
+    ],
     "id": 2
   }
 ]

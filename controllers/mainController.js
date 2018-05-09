@@ -26,6 +26,9 @@ class Controller {
       { name: 'complete', purpose: 'Mark a TODO as complete based on the task_id'},
       { name: 'uncomplete', purpose: 'Mark a TODO as uncomplete based on the task_id'},
       { name: 'help', purpose: 'Show all commands for this program'},
+      { name: 'tag', purpose: 'Give tags to a TODO based on the task_id'},
+      { name: 'untag', purpose: 'Remove tags from a TODO based on the task_id'},
+      { name: 'filter', purpose: 'Filter TODOs based on the tags that they have'}
     ];
     View.showHelp(options);
   }
