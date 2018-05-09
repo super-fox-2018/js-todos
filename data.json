@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "task": "Pergi ke mall",
+    "status": false,
+    "createdAt": "2018-05-09T04:45:09.761Z",
+    "id": 4
+  },
+  {
+    "task": "Jalan-jalan",
+    "status": true,
+    "createdAt": "2018-05-09T07:08:44.619Z",
+    "id": 5
+  },
+  {
+    "task": "Tidur",
+    "status": false,
+    "createdAt": "2018-05-09T07:09:31.666Z",
+    "id": 6
+  }
+]
