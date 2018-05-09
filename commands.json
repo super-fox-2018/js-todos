@@ -1,0 +1,34 @@
+[
+  {
+    "command": "list:<sort_by>",
+    "input": "<asc/desc>"
+  },
+  {
+    "command": "add",
+    "input": "<task_content>"
+  },
+  {
+    "command": "findById",
+    "input": "<task_id>"
+  },
+  {
+    "command": "delete",
+    "input": "<task_id>"
+  },
+  {
+    "command": "complete",
+    "input": "<task_id>"
+  },
+  {
+    "command": "uncomplete",
+    "input": "<task_id>"
+  },
+  {
+    "command": "tags",
+    "input": "<task_id> <new_tag> <new_tag>"
+  },
+  {
+    "command": "filter",
+    "input": "<task_id>"
+  }
+]

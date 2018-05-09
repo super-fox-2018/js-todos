@@ -1,1 +1,39 @@
-[]
+[
+  {
+    "id": 1,
+    "task": "coding",
+    "status": "completed",
+    "createdAt": 5,
+    "completedAt": "2018-05-09T09:04:10.711Z",
+    "tags": []
+  },
+  {
+    "id": 2,
+    "task": "go_home",
+    "status": "pending",
+    "createdAt": 2,
+    "completedAt": "0",
+    "tags": []
+  },
+  {
+    "id": 3,
+    "task": "shower",
+    "status": "completed",
+    "createdAt": 3,
+    "completedAt": "2018-05-09T09:04:14.860Z",
+    "tags": [
+      "relax"
+    ]
+  },
+  {
+    "id": 4,
+    "task": "sleep",
+    "status": "pending",
+    "createdAt": 4,
+    "completedAt": "0",
+    "tags": [
+      "relax",
+      "healing"
+    ]
+  }
+]
