@@ -18,36 +18,66 @@ class Controller {
     return options;
   }
 
-  static route(option, argument) {
-    switch(option) {
-      case 'add':
-        this.addHandler(argument);
-        break;
-      case 'list':
-        this.listHandler();
-        break;
-      case 'findById':
-        this.findByIdHandler(argument);
-        break;
-      case 'delete':
-        this.deleteHandler(argument);
-        break;
-      case 'complete':
-        this.completeHandler(argument);
-        break;
-      case 'uncomplete' :
-        this.uncompleteHandler(argument);
-        break;
-      default:
-      this.helpHandler(argument);
+  static processInput(input) {
+    if (input[2]) {
+      const option = input[2].split(':');
+      const argumentList = [];
+      for (let i = 3; i < input.length; i += 1) {
+        argumentList.push(input[i]);
+      }
+      this.route(option[0], option[1], argumentList);
+    } else {
+      this.handleHelp();
     }
   }
 
-  static addHandler(argument) {
+  static route(option, modifier, argumentList) {
+    switch(option) {
+      case 'add':
+        this.handleAdd(argumentList[0]);
+        break;
+      case 'list':
+        this.handleList(modifier, argumentList[0]);
+        break;
+      case 'findById':
+        this.handleFindById(+argumentList[0]);
+        break;
+      case 'delete':
+        this.handleDelete(+argumentList[0]);
+        break;
+      case 'complete':
+        this.handleCompleteTodo(+argumentList[0]);
+        break;
+      case 'uncomplete' :
+        this.handleUncompleteTodo(+argumentList[0]);
+        break;
+      case 'tag':
+        break;
+      default:
+      this.handleHelp();
+    }
+  }
+
+  static quickSort(arr, fn) {
+    if (arr.length <= 1) return arr;
+    const left = [];
+    const right = [];
+    const pivot = arr[arr.length - 1];
+    for (let i = 0; i < arr.length - 1; i += 1) {
+      if (fn(arr[i], pivot)) left.push(arr[i]);
+      else right.push(arr[i]);
+    }
+  
+    return this.quickSort(left, fn).concat(pivot, this.quickSort(right, fn));
+  }
+
+  static handleAdd(argument) {
     const newTodo = {
       task: argument,
       status: false,
-      createdAt: new Date()
+      createdAt: new Date(),
+      completedAt: null,
+      tag: []
     };
 
     const addedTodo = todoList.add(newTodo);
@@ -55,17 +85,25 @@ class Controller {
     View.showMessage(message);
   }
 
-  static helpHandler(argument) {
+  static handleHelp() {
     View.showHelp(this.options);
   }
 
-  static listHandler() {
-    const todos = todoList.find();
+  static handleList(modifier, order) {
+    const opt = modifier === 'completed' ? { status : true } : null;
+    let todos = todoList.find(opt);
+    if (modifier) {
+      const mod = modifier === 'created' ? 'createdAt' : 'completedAt';
+      const fn = (a,b) => {
+        if (order === 'asc') return a[mod] < b[mod];
+        else return a[mod] > b[mod];
+      }
+      todos = this.quickSort(todos, fn);
+    }
     View.showList(todos);
   }
 
-  static findByIdHandler(argument) {
-    const id = +argument;
+  static handleFindById(id) {
     const todo = todoList.findById(id);
     if (todo) {
       View.showOne(todo);
@@ -74,9 +112,8 @@ class Controller {
     }
   }
 
-  static deleteHandler(argument) {
-    const id = +argument;
-    const deletedTodo = todoList.delete(id);
+  static handleDelete(id) {
+    const deletedTodo = todoList.deleteById(id);
     if (deletedTodo) {
       View.showMessage(`Deleted "${deletedTodo.task}" from your TODO list...`);
       View.showOne(deletedTodo);
@@ -85,21 +122,20 @@ class Controller {
     }
   }
 
-  static completeHandler(argument) {
-    const id = +argument;
-    const updatedTodo = todoList.updateById(id, { status : true });
+  static handleCompleteTodo(id) {
+    const updatedTodo = todoList.updateById(id, { status : true, completedAt : Date.now() });
     if (updatedTodo) {
-      this.listHandler();
+      // this.handleList();
     } else {
       View.showMessage("Todo not found");
     }
   }
 
-  static uncompleteHandler(argument) {
+  static handleUncompleteTodo(argument) {
     const id = +argument;
-    const updatedTodo = todoList.updateById(id, { status : false });
+    const updatedTodo = todoList.updateById(id, { status : false, completedAt : null });
     if (updatedTodo) {
-      this.listHandler();
+      // this.handleList();
     } else {
       View.showMessage("Todo not found");
     }

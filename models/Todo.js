@@ -26,7 +26,7 @@ class Todo {
     return newTodo;
   }
 
-  delete(id) {
+  deleteById(id) {
     let deletedTodo = null;
     for (let i = 0; i < this._todos.length; i += 1) {
       const todo = this._todos[i];
@@ -39,8 +39,27 @@ class Todo {
     return deletedTodo;
   }
 
-  find() {
-    return this._todos;
+  find(opt) {
+    if (opt) {
+      const newTodos = [];
+      const keys = Object.keys(opt);
+      for (let i = 0; i < this._todos.length; i += 1) {
+        const todo = this._todos[i];
+        let result = false;
+        for (let j = 0; j < keys.length; j += 1) {
+          const prop = keys[j];
+          if (todo[prop] === opt[prop]) result = true;
+          else {
+            result = false;
+            break;
+          }
+        }
+        if (result) newTodos.push(todo);
+      }
+      return newTodos;
+    } else {
+      return this._todos;
+    }
   }
 
   findById(id) {

@@ -1,20 +1,42 @@
 [
   {
-    "task": "Pergi ke mall",
-    "status": false,
-    "createdAt": "2018-05-09T04:45:09.761Z",
-    "id": 4
+    "task": "Tidur",
+    "status": true,
+    "createdAt": "2018-05-09T08:39:58.247Z",
+    "completedAt": 1525855425879,
+    "tag": [],
+    "id": 2
   },
   {
-    "task": "Jalan-jalan",
+    "task": "Diam",
     "status": true,
-    "createdAt": "2018-05-09T07:08:44.619Z",
+    "createdAt": "2018-05-09T08:40:24.607Z",
+    "completedAt": 1525855437454,
+    "tag": [],
     "id": 5
   },
   {
-    "task": "Tidur",
+    "task": "Makan nasi",
     "status": false,
-    "createdAt": "2018-05-09T07:09:31.666Z",
-    "id": 6
+    "createdAt": "2018-05-09T08:32:21.734Z",
+    "completedAt": null,
+    "tag": [],
+    "id": 1
+  },
+  {
+    "task": "Minum",
+    "status": false,
+    "createdAt": "2018-05-09T08:40:04.236Z",
+    "completedAt": null,
+    "tag": [],
+    "id": 3
+  },
+  {
+    "task": "Lari",
+    "status": true,
+    "createdAt": "2018-05-09T08:40:10.954Z",
+    "completedAt": 1525855430777,
+    "tag": [],
+    "id": 4
   }
 ]
