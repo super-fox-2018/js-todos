@@ -28,8 +28,10 @@ class Controller {
       View.displayList(foundId);
     }
     else if (argv[2] === 'delete') {
-      let deleteId = argv[3];
-      let displayText = View.displayDeleteList(deleteId);
+      let lists = this.getList();
+      let id = Number(argv[3]);
+      View.displayDeletedTask(id, lists);
+      this.deleteById(id, lists);
     }
     else if (argv[2] === 'complete') {
       let completeId = argv[3];
@@ -55,6 +57,10 @@ class Controller {
   static getId(id) {
     let foundObj = model.findById(id);
     return foundObj
+  }
+
+  static deleteById(id, lists) {
+    model.deleteById(id, lists);
   }
 }
 

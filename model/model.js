@@ -4,6 +4,7 @@ class Model {
   constructor() {
     this._data = [];
     this._file = './model/data.json';
+    this._trackId = [];
     // this._file = './data.json'
   }
   // list
@@ -23,6 +24,7 @@ class Model {
     // add new task to array
     this.readData();
     let len = this._data.length;
+
     let newTask = {
       'id': len + 1,
       'task': task
@@ -40,6 +42,22 @@ class Model {
       let list = lists[i];
       if (id == list['id']) return list;
     }
+  }
+
+  deleteById(id, lists) {
+    // splice
+    // let lists = this.readData();
+    for (let i = 0; i < lists.length; i++) {
+      let list = lists[i];
+      if (id == list['id']) {
+        lists.splice(i, 1);
+        break;
+      }
+    }
+
+    this._data = lists;
+    let string = JSON.stringify(this._data, null, 2)
+    fs.writeFileSync('./model/data.json', string, 'utf8');
   }
 }
 

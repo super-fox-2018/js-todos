@@ -4,23 +4,15 @@
     "task": "Do homework"
   },
   {
-    "id": 2,
-    "task": "Bikin aplikasi"
-  },
-  {
-    "id": 3,
-    "task": "makan sabun"
-  },
-  {
     "id": 4,
-    "task": "lari 5km"
+    "task": "menguap untuk yang kesekian kalinya"
   },
   {
     "id": 5,
-    "task": "bikin kopi lagi"
+    "task": "refactor lagi ya plis"
   },
   {
     "id": 6,
-    "task": "menguap untuk yang kesekian kalinya"
+    "task": "menguap"
   }
 ]
