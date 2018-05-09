@@ -1,42 +1,21 @@
 [
   {
-    "task": "Tidur",
-    "status": true,
-    "createdAt": "2018-05-09T08:39:58.247Z",
-    "completedAt": 1525855425879,
-    "tag": [],
-    "id": 2
-  },
-  {
-    "task": "Diam",
-    "status": true,
-    "createdAt": "2018-05-09T08:40:24.607Z",
-    "completedAt": 1525855437454,
-    "tag": [],
-    "id": 5
-  },
-  {
-    "task": "Makan nasi",
+    "task": "Tidur sampai minggu depan",
     "status": false,
-    "createdAt": "2018-05-09T08:32:21.734Z",
+    "createdAt": 1525863933293,
     "completedAt": null,
-    "tag": [],
+    "tags": [
+      "good",
+      "vibe"
+    ],
     "id": 1
   },
   {
-    "task": "Minum",
-    "status": false,
-    "createdAt": "2018-05-09T08:40:04.236Z",
-    "completedAt": null,
-    "tag": [],
-    "id": 3
-  },
-  {
-    "task": "Lari",
+    "task": "Jalan-jalan ke mana saja",
     "status": true,
-    "createdAt": "2018-05-09T08:40:10.954Z",
-    "completedAt": 1525855430777,
-    "tag": [],
-    "id": 4
+    "createdAt": 1525865793415,
+    "completedAt": 1525866020270,
+    "tags": [],
+    "id": 2
   }
 ]

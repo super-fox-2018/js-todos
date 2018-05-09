@@ -1,50 +1,47 @@
 const fs = require('fs');
 
 class Todo {
-  constructor(filename) {
-    this._filename = filename;
-    this._todos = this.readData();
-  }
 
-  readData() {
-    const string = fs.readFileSync(this._filename, 'utf8');
+  static readData() {
+    const string = fs.readFileSync('data.json', 'utf8');
     return string !== '' ? JSON.parse(string) : [];
   }
 
-  writeData() {
-    const string = JSON.stringify(this._todos, null, 2);
-    fs.writeFile(this._filename, string, (err) => {
-      if (err) throw err;
-    });
+  static writeData(data) {
+    const string = JSON.stringify(data, null, 2);
+    fs.writeFileSync('data.json', string);
   }
 
-  add(newTodo) {
-    const todosLength = this._todos.length;
-    newTodo.id = todosLength === 0 ? 1 : this._todos[todosLength - 1].id + 1;
-    this._todos.push(newTodo);
-    this.writeData();
+  static add(newTodo) {
+    const todos = this.readData();
+    const todosLength = todos.length;
+    newTodo.id = todosLength === 0 ? 1 : todos[todosLength - 1].id + 1;
+    todos.push(newTodo);
+    this.writeData(todos);
     return newTodo;
   }
 
-  deleteById(id) {
+  static deleteById(id) {
+    const todos = this.readData();
     let deletedTodo = null;
-    for (let i = 0; i < this._todos.length; i += 1) {
-      const todo = this._todos[i];
+    for (let i = 0; i < todos.length; i += 1) {
+      const todo = todos[i];
       if (todo.id === id) {
-        deletedTodo = this._todos.splice(i, 1)[0];
-        this.writeData();
+        deletedTodo = todos.splice(i, 1)[0];
+        this.writeData(todos);
         break;
       }
     }
     return deletedTodo;
   }
 
-  find(opt) {
+  static find(opt) {
+    const todos = this.readData();
     if (opt) {
       const newTodos = [];
       const keys = Object.keys(opt);
-      for (let i = 0; i < this._todos.length; i += 1) {
-        const todo = this._todos[i];
+      for (let i = 0; i < todos.length; i += 1) {
+        const todo = todos[i];
         let result = false;
         for (let j = 0; j < keys.length; j += 1) {
           const prop = keys[j];
@@ -58,38 +55,37 @@ class Todo {
       }
       return newTodos;
     } else {
-      return this._todos;
+      return todos;
     }
   }
 
-  findById(id) {
-    for (let i = 0; i < this._todos.length; i += 1) {
-      const todo = this._todos[i];
+  static findById(id) {
+    const todos = this.readData();
+    for (let i = 0; i < todos.length; i += 1) {
+      const todo = todos[i];
       if (todo.id === id) {
         return todo;
       }
     }
-
     return null;
   }
 
-  updateById(id, options={}) {
+  static updateById(id, options={}) {
+    const todos = this.readData();
     const keys = Object.keys(options);
-    for (let i = 0; i < this._todos.length; i += 1 ) {
-      const todo = this._todos[i];
+    for (let i = 0; i < todos.length; i += 1 ) {
+      const todo = todos[i];
       if (todo.id === id) {
         for (let j = 0; j < keys.length; j += 1) {
           const prop = keys[j];
           todo[prop] = options[prop]
         }
-        this.writeData();
+        this.writeData(todos);
         return todo;
       }
     }
     return null;
   }
-
-
 }
 
 module.exports = Todo;

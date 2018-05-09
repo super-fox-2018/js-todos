@@ -11,7 +11,7 @@ class View {
   static showList(todos) {
     for (let i = 0; i < todos.length; i += 1) {
       const todo = todos[i];
-      console.log(`${i+1}. [${todo.status ? 'X' : ' '}] ${todo.task} (id:${todo.id})`);
+      console.log(`${todo.id}. [${todo.status ? 'X' : ' '}] ${todo.task}`);
     }
   }
 
@@ -19,11 +19,21 @@ class View {
     console.log(`Id : ${todo.id}`);
     console.log(`Task : ${todo.task}`);
     console.log(`Status : ${todo.status ? 'Completed' : 'Uncompleted' }`);
-    console.log(`Created At : ${todo.createdAt}`);
+    console.log(`Created At : ${new Date(todo.createdAt).toString()}`);
+    if (todo.completedAt) {
+      console.log(`Completed At : ${new Date(todo.completedAt).toString()}`);
+    }
   }
 
   static showMessage(message) {
     console.log(message);
+  }
+
+  static showFilteredTodo(todos) {
+    for (let i = 0; i < todos.length; i += 1) {
+      const todo = todos[i];
+      console.log(`${todo.id}. ${todo.task} [${todo['tags'].join(', ')}]`);
+    }
   }
 }
 
