@@ -1,4 +1,6 @@
 // const argv = process.argv;
+// ARGV ONLY RETURNS STRING!
+
 const View = require('../view/view.js');
 const Model = require('../model/model.js');
 
@@ -17,12 +19,13 @@ class Controller {
     }
     else if (argv[2] === 'add') {
       let task = argv[3];
-      this.addList(task)
-      let displayText = View.displayAddedTask(task);
+      this.addList(task);
+      View.displayAddedTask(task);
     }
     else if (argv[2] === 'findById') {
-      let findId = argv[3];
-      let displayText = View.displayById(findId);
+      let id = Number(argv[3]);
+      let foundId = this.getId(id); // object
+      View.displayList(foundId);
     }
     else if (argv[2] === 'delete') {
       let deleteId = argv[3];
@@ -47,6 +50,11 @@ class Controller {
 
   static addList(task) {
     model.writeData(task);
+  }
+
+  static getId(id) {
+    let foundObj = model.findById(id);
+    return foundObj
   }
 }
 

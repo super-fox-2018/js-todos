@@ -4,7 +4,7 @@ class Model {
   constructor() {
     this._data = [];
     this._file = './model/data.json';
-    //this._file = './data.json'
+    // this._file = './data.json'
   }
   // list
   listData() {
@@ -32,8 +32,17 @@ class Model {
     let string = JSON.stringify(this._data, null, 2)
     fs.writeFileSync('./model/data.json', string, 'utf8');
   }
+
+  findById(id) { // return found object
+    let lists = this.readData();
+    // console.log(lists)
+    for (let i = 0; i < lists.length; i++) {
+      let list = lists[i];
+      if (id == list['id']) return list;
+    }
+  }
 }
 
 module.exports = Model
 // let model = new Model();
-// console.log(model.writeData('makan sabun'));
+// console.log(model.findById(2));
