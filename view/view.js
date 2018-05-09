@@ -31,9 +31,10 @@ class View {
   static displayDeletedTask(id, lists) {
     for (let i = 0; i < lists.length; i++) {
       let list = lists[i];
-      if (id == list['id'])
+      if (id == list['id']) {
         console.log(`Deleted "${list['task']}" from your TODO list...`)
         break;
+      }
     }
   }
 

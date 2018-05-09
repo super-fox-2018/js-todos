@@ -46,12 +46,12 @@ class Controller {
 
   static getList() {
     // get method from model
-    let todo = model.listData();
+    let todo = model.readData();
     return todo;
   }
 
   static addList(task) {
-    model.writeData(task);
+    model.addList(task);
   }
 
   static getId(id) {
@@ -60,6 +60,7 @@ class Controller {
   }
 
   static deleteById(id, lists) {
+    console.log('from controller', model.deleteById(id, lists))
     model.deleteById(id, lists);
   }
 }

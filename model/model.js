@@ -4,15 +4,9 @@ class Model {
   constructor() {
     this._data = [];
     this._file = './model/data.json';
-    this._trackId = [];
     // this._file = './data.json'
   }
-  // list
-  listData() {
-    let lists = this.readData();
-    return lists;
-  }
-
+  // read
   readData() {
     let parser = fs.readFileSync(this._file, 'utf8');
     let jsonData = JSON.parse(parser)
@@ -20,20 +14,36 @@ class Model {
     return this._data
   }
 
-  writeData(task) {
-    // add new task to array
-    this.readData();
-    let len = this._data.length;
-
-    let newTask = {
-      'id': len + 1,
-      'task': task
-    }
-    this._data.push(newTask);
+  writeData() {
     // write to json file
     let string = JSON.stringify(this._data, null, 2)
     fs.writeFileSync('./model/data.json', string, 'utf8');
   }
+
+  addList(task) {
+    // add new task to array
+    this.readData();
+    let len = this._data.length;
+    let id;
+
+    if (len === 0) {
+      id = 1;
+    } else {
+      id = this._data[len - 1]['id'] + 1;
+    }
+
+    let newTask = {
+      'id': id,
+      'task': task,
+      'status': 'incomplete',
+      'createdAt': 0,
+      'tag': []
+    }
+    
+    this._data.push(newTask);
+    this.writeData();
+  }
+
 
   findById(id) { // return found object
     let lists = this.readData();
