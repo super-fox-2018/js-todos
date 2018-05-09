@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "id": 1,
+    "task": "Bake a delicious peanut butter cake",
+    "status": "[ ]",
+    "date": "2018-05-09T11:48:36.026Z"
+  },
+  {
+    "id": 2,
+    "task": "Shut down my computer",
+    "status": "[X]",
+    "date": "2018-05-09T11:50:02.129Z"
+  },
+  {
+    "id": 3,
+    "task": "Change the world",
+    "status": "[X]",
+    "date": "2018-05-09T11:50:27.989Z"
+  },
+  {
+    "id": 4,
+    "task": "Playing game",
+    "status": "[ ]",
+    "date": "2018-05-09T11:50:51.029Z"
+  },
+  {
+    "id": 5,
+    "task": "Main node js",
+    "status": "[X]",
+    "date": "2018-05-09T11:51:16.921Z"
+  },
+  {
+    "id": 6,
+    "task": "Bake a chocolate cookies",
+    "status": "[ ]",
+    "date": "2018-05-09T11:51:52.978Z"
+  }
+]
