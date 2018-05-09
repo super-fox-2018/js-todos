@@ -4,10 +4,12 @@ class Model {
   constructor() {
     this._data = [];
     this._file = './model/data.json';
+    //this._file = './data.json'
   }
   // list
   listData() {
-    return this.readData();
+    let lists = this.readData();
+    return lists;
   }
 
   readData() {
@@ -17,11 +19,21 @@ class Model {
     return this._data
   }
 
-  writeData() {
-
+  writeData(task) {
+    // add new task to array
+    this.readData();
+    let len = this._data.length;
+    let newTask = {
+      'id': len + 1,
+      'task': task
+    }
+    this._data.push(newTask);
+    // write to json file
+    let string = JSON.stringify(this._data, null, 2)
+    fs.writeFileSync('./model/data.json', string, 'utf8');
   }
 }
 
 module.exports = Model
 // let model = new Model();
-// console.log(model.listData());
+// console.log(model.writeData('makan sabun'));

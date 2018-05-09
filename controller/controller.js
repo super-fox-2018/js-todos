@@ -17,7 +17,8 @@ class Controller {
     }
     else if (argv[2] === 'add') {
       let task = argv[3];
-      let displayText = View.displayAddList(task);
+      this.addList(task)
+      let displayText = View.displayAddedTask(task);
     }
     else if (argv[2] === 'findById') {
       let findId = argv[3];
@@ -42,6 +43,10 @@ class Controller {
     // get method from model
     let todo = model.listData();
     return todo;
+  }
+
+  static addList(task) {
+    model.writeData(task);
   }
 }
 

@@ -6,5 +6,21 @@
   {
     "id": 2,
     "task": "Bikin aplikasi"
+  },
+  {
+    "id": 3,
+    "task": "makan sabun"
+  },
+  {
+    "id": 4,
+    "task": "lari 5km"
+  },
+  {
+    "id": 5,
+    "task": "bikin kopi lagi"
+  },
+  {
+    "id": 6,
+    "task": "menguap untuk yang kesekian kalinya"
   }
 ]

@@ -13,14 +13,15 @@ class View {
   }
 
   static displayList(lists) {
+    console.log(`TODO List:`)
     for (let i = 0; i < lists.length; i++) {
       let list = lists[i];
       console.log(`${list.id}. ${list.task}`);
     }
   }
 
-  static displayAddList(task) {
-    
+  static displayAddedTask(task) {
+    console.log(`Added "${task}" to your TODO list...`)
   }
 }
 
