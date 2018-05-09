@@ -132,7 +132,7 @@ class Model {
         for(let i = 0; i < filter.length; i++){
             for(let j = 0; j < todoFile.length; j++){
                 let checkIdxtags = todoFile[j].tags.indexOf(filter[i])
-                let checkIdxList = todoFileReturned.indexOf(todoFile[j])
+                let checkIdxList = fileReturned.indexOf(todoFile[j])
                 if(checkIdxtags >=0 && checkIdxList<0) fileReturned.push(todoFile[j])
             }
         }
