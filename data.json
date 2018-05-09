@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "id": 1,
+    "task": "Sebentar Lagi",
+    "status": "[X]",
+    "createdAt": "2018-05-09T11:21:50.699Z",
+    "completedAt": "2018-05-09T11:25:47.663Z",
+    "tag": []
+  },
+  {
+    "id": 2,
+    "task": "Belum Pulang",
+    "status": "[]",
+    "createdAt": "2018-05-09T11:23:42.416Z",
+    "completedAt": null,
+    "tag": [
+      "study",
+      "lembur"
+    ]
+  },
+  {
+    "id": 3,
+    "task": "Laper",
+    "status": "[X]",
+    "createdAt": "2018-05-09T11:24:24.691Z",
+    "completedAt": "2018-05-09T11:25:52.611Z",
+    "tag": ["study"]
+  }
+]
