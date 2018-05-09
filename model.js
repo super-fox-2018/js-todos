@@ -32,6 +32,7 @@ class Model {
                 for(let i = 0; i < todoFile.length; i++){
                     if(todoFile[i].status!=='completed'){
                         todoFile.splice(i,1)
+                        i=0
                     }
                 }
                 if(ascDesc === 'asc'){
@@ -61,7 +62,7 @@ class Model {
     static WriteData(todoFile,callback){
         todoFile = JSON.stringify(todoFile,null,2)
         fs.writeFileSync('data.json',todoFile,'utf-8')
-        if(callback !== undefined) callback(this.readfile())
+        if(callback !== undefined) callback(this.readFile())
     }
 
     static addTask(task,todoFile){

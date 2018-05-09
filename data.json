@@ -24,9 +24,9 @@
   {
     "id": 3,
     "content": "main",
-    "status": "completed",
+    "status": "uncompleted",
     "createdAt": "2018-05-09T06:02:38.407Z",
-    "completedIn": "2018-05-09T08:01:17.570Z",
+    "completedIn": null,
     "tags": [
       "minum"
     ]
@@ -42,9 +42,9 @@
   {
     "id": 5,
     "content": "gaming",
-    "status": "uncompleted",
+    "status": "completed",
     "createdAt": "2018-05-09T10:51:25.873Z",
-    "completedIn": null,
+    "completedIn": "2018-05-09T12:13:54.407Z",
     "tags": []
   }
 ]
