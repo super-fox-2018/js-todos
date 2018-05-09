@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "id": 1,
+    "task": "Bangun tidur",
+    "status": "incomplete",
+    "created_date": "2018-05-09T11:49:37.598Z",
+    "tag": [],
+    "completed_date": ""
+  },
+  {
+    "id": 2,
+    "task": "Tidur Lagi",
+    "status": "complete",
+    "created_date": "2018-05-09T11:49:44.816Z",
+    "tag": [
+      "Hello",
+      "Oke"
+    ],
+    "completed_date": "2018-05-09T12:43:35.136Z"
+  },
+  {
+    "id": 3,
+    "task": "Lagi Mimpi",
+    "status": "complete",
+    "created_date": "2018-05-09T11:50:01.789Z",
+    "tag": [
+      "Bangun",
+      "Hello",
+      "Juga"
+    ],
+    "completed_date": "2018-05-09T11:50:44.138Z"
+  },
+  {
+    "id": 4,
+    "task": "Mimpi berenang",
+    "status": "incomplete",
+    "created_date": "2018-05-09T11:50:18.866Z",
+    "tag": []
+  },
+  {
+    "id": 5,
+    "task": "Berenang di kali",
+    "status": "incomplete",
+    "created_date": "2018-05-09T11:50:25.514Z",
+    "tag": []
+  }
+]
