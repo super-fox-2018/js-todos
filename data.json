@@ -1,1 +1,64 @@
-[]
+[
+  {
+    "id": 1,
+    "task": "Bikin aplikasi",
+    "status": "New",
+    "tags": [],
+    "createdAt": 1025868589355
+  },
+  {
+    "id": 2,
+    "task": "Main Node.js",
+    "status": "New",
+    "tags": [
+      "hobby",
+      "pet"
+    ],
+    "createdAt": 1125868589355
+  },
+  {
+    "id": 6,
+    "task": "Main Gundu",
+    "status": "complete",
+    "tags": [],
+    "createdAt": 1225868589355
+  },
+  {
+    "id": 7,
+    "task": "Kuras Air Laut",
+    "status": "uncomplete",
+    "tags": [
+      "mustahil",
+      "laut"
+    ],
+    "createdAt": 1325868589355
+  },
+  {
+    "id": 8,
+    "task": "Hitung biji kuaci",
+    "status": "New",
+    "tags": [],
+    "createdAt": 1425868589355
+  },
+  {
+    "id": 9,
+    "task": "Hitung bulu kucing",
+    "status": "New",
+    "tags": [],
+    "createdAt": 1525868589350
+  },
+  {
+    "id": 10,
+    "task": "Makan Nasi Goreng",
+    "status": "complete",
+    "tags": [],
+    "createdAt": 1525868589358
+  },
+  {
+    "id": 11,
+    "task": "Ngopi napa",
+    "status": "New",
+    "tags": [],
+    "createdAt": 1525876596570
+  }
+]
