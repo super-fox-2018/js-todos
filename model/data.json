@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "task": "Do homework",
+    "status": "complete",
+    "createdAt": 0,
+    "tag": [],
+    "completed_date": "2018-05-09T14:12:40.909Z"
+  },
+  {
+    "id": 4,
+    "task": "menguap untuk yang kesekian kalinya",
+    "status": "incomplete",
+    "createdAt": 0,
+    "tag": []
+  },
+  {
+    "id": 6,
+    "task": "menguap",
+    "status": "incomplete",
+    "createdAt": 0,
+    "tag": []
+  },
+  {
+    "id": 7,
+    "task": "makan pecel ayam",
+    "status": "incomplete",
+    "createdAt": 0,
+    "tag": []
+  },
+  {
+    "id": 8,
+    "task": "minum susu",
+    "status": "complete",
+    "createdAt": 0,
+    "tag": [],
+    "completed_date": "2018-05-09T14:05:43.212Z"
+  }
+]
