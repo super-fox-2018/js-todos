@@ -39,11 +39,38 @@ class Model {
       'createdAt': 0,
       'tag': []
     }
-    
+
     this._data.push(newTask);
     this.writeData();
   }
 
+  completeList(id) {
+    let lists = this.readData();
+    for(let i = 0; i < lists.length; i++){
+      let list = lists[i];
+      if(id == list['id']){
+        list.status = "complete";
+        list.completed_date = new Date();
+      }
+    }
+    this._data = lists;
+    this.writeData();
+    return this._data;
+  }
+
+  uncompleteList(id) {
+    let lists = this.readData();
+    for(let i = 0; i < lists.length; i++){
+      let list = lists[i];
+      if(id == list['id']){
+        list.status = "incomplete";
+        list.completed_date = "";
+      }
+    }
+    this._data = lists;
+    this.writeData();
+    return this._data;
+  }
 
   findById(id) { // return found object
     let lists = this.readData();
@@ -56,7 +83,6 @@ class Model {
 
   deleteById(id, lists) {
     // splice
-    // let lists = this.readData();
     for (let i = 0; i < lists.length; i++) {
       let list = lists[i];
       if (id == list['id']) {
@@ -64,10 +90,8 @@ class Model {
         break;
       }
     }
-
     this._data = lists;
-    let string = JSON.stringify(this._data, null, 2)
-    fs.writeFileSync('./model/data.json', string, 'utf8');
+    this.writeData();
   }
 }
 

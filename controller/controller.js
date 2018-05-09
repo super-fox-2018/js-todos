@@ -34,12 +34,18 @@ class Controller {
       this.deleteById(id, lists);
     }
     else if (argv[2] === 'complete') {
+      // let lists = this.getList();
       let completeId = argv[3];
-      let displayText = View.displayList(completeId);
+      let completeList = this.completeList(completeId);
+      //console.log(completeList)
+      View.displayList(completeList);
     }
     else if (argv[2] === 'uncomplete') {
+      // let lists = this.getList();
       let uncompleteId = argv[3];
-      let displayText = View.displayList(uncompleteId);
+      let uncompleteList = this.uncompleteList(uncompleteId);
+      //console.log(uncompleteList)
+      View.displayList(uncompleteList);
     }
     // console.log(displayText)
   }
@@ -60,8 +66,17 @@ class Controller {
   }
 
   static deleteById(id, lists) {
-    console.log('from controller', model.deleteById(id, lists))
     model.deleteById(id, lists);
+  }
+
+  static completeList(id) {
+    let completeObj = model.completeList(id);
+    return completeObj;
+  }
+
+  static uncompleteList(id) {
+    let uncompleteObj =  model.uncompleteList(id);
+    return uncompleteObj;
   }
 }
 

@@ -13,14 +13,27 @@ class View {
   }
 
   static displayList(data) {
+    let complete = '[x]';
+    let incomplete = '[ ]';
+    // display array of obj
     if (data.length >= 0) {
       console.log(`TODO List:`)
       for (let i = 0; i < data.length; i++) {
         let list = data[i];
-        console.log(`${list.id}. ${list.task}`);
+
+        if (list.status === "complete") {
+          console.log(`${list.id}. ${complete} ${list.task}`);
+        } else {
+          console.log(`${list.id}. ${incomplete} ${list.task}`);
+        }
       }
-    } else {
-      console.log(`${data.id}. ${data.task}`);
+    } 
+    else { // display specific obj
+      if (data.status === "complete") {
+        console.log(`${data.id}. ${complete} ${data.task}`);
+      } else {
+        console.log(`${data.id}. ${incomplete} ${data.task}`);
+      }
     }
   }
 
