@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": 1,
+    "task": "Do homework"
+  },
+  {
+    "id": 2,
+    "task": "Bikin aplikasi"
+  }
+]
