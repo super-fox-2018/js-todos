@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "id": 1,
+    "stats": "[ ]",
+    "task": "Coding",
+    "tag": []
+  },
+  {
+    "id": 2,
+    "stats": "[ ]",
+    "task": "Sleep",
+    "tag": []
+  },
+  {
+    "id": 3,
+    "stats": "[ ]",
+    "task": "Eat",
+    "tag": []
+  },
+  {
+    "id": 4,
+    "stats": "[ ]",
+    "task": "Walk",
+    "tag": []
+  },
+  {
+    "id": 5,
+    "stats": "[ ]",
+    "task": "Read",
+    "tag": []
+  },
+  {
+    "id": 6,
+    "stats": "[ ]",
+    "task": "GoofingAround",
+    "tag": []
+  }
+]
