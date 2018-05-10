@@ -152,10 +152,10 @@ class Model{
   }
   sortCompletedAsc(data){
     function compare(a,b){
-      if (a.created_date < b.created_date){
+      if (a.completed_date < b.completed_date){
         return -1;
       }
-      if (a.created_date > b.created_date){
+      if (a.completed_date > b.completed_date){
         return 1;
       }
       return 0;
@@ -165,10 +165,10 @@ class Model{
 
   sortCompletedDesc(data){
     function compare(a,b){
-      if (a.created_date > b.created_date){
+      if (a.completed_date > b.completed_date){
         return -1;
       }
-      if (a.created_date < b.created_date){
+      if (a.completed_date < b.completed_date){
         return 1;
       }
       return 0;
