@@ -20,3 +20,11 @@ if (command[0]==='delete') {
 	let idToDel = Number(command[1])
 	controller.deleteById(idToDel)
 }
+if (command[0]==='complete') {
+	let idToComp = Number(command[1])
+	controller.completeById(idToComp)
+}
+if (command[0]==='uncomplete') {
+	let idToUnComp = Number(command[1])
+	controller.uncompleteById(idToUnComp)
+}

@@ -57,6 +57,28 @@ class Model{
 		this.writeFile(listData)
 		return dataDeleted
 	}
+	static complete(id){
+		let listData = this.readFile()
+		for(var i=0;i<listData.length;i++){
+			if (listData[i].id===id) {
+				listData[i].mark = '[X]'
+			}
+		}
+		listData = JSON.stringify(listData)
+		this.writeFile(listData)
+		return this.readFile()
+	}
+	static uncomplete(id){
+		let listData = this.readFile()
+		for(var i=0;i<listData.length;i++){
+			if (listData[i].id===id) {
+				listData[i].mark = '[ ]'
+			}
+		}
+		listData = JSON.stringify(listData)
+		this.writeFile(listData)
+		return this.readFile()
+	}
 }
 
 //testing purpose

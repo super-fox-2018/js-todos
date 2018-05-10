@@ -21,6 +21,14 @@ class Controller{
 		let idToDel = model.delete(id)
 		view.deleteById(idToDel)
 	}
+	static completeById(id){
+		let completeById = model.complete(id)
+		view.list(completeById)
+	}
+	static uncompleteById(id){
+		let uncompleteById = model.uncomplete(id)
+		view.list(uncompleteById)
+	}
 }
 
 //testing purpose

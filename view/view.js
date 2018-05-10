@@ -31,6 +31,5 @@ class View{
     console.log(dataShowed)
   }
 
-
 }
 module.exports = View
