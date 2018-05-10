@@ -8,5 +8,15 @@ if (command[0]==='list') {
 	controller.list()
 }
 if (command[0]==='add') {
-	controller.add(commands[1])
+	let addTask = command.slice(1)
+	controller.add(addTask)
+	console.log(addTask)
+}
+if (command[0]==='findById') {
+	let idToFind = Number(command[1])
+	controller.findById(idToFind)
+}
+if (command[0]==='delete') {
+	let idToDel = Number(command[1])
+	controller.deleteById(idToDel)
 }

@@ -13,6 +13,14 @@ class Controller{
 		let addedList = model.add(taskAdded)
 		view.add(addedList)
 	}
+	static findById(id){
+		let idToFind = model.findById(id)
+		view.findById(idToFind)
+	}
+	static deleteById(id){
+		let idToDel = model.delete(id)
+		view.deleteById(idToDel)
+	}
 }
 
 //testing purpose

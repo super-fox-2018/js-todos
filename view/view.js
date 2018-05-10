@@ -16,7 +16,19 @@ class View{
   }
 
   static list(list){
-  	console.log(list)
+    for(var i=0;i<list.length;i++){
+      console.log(`${list[i].id}: ${list[i].task} ${list[i].mark}`)
+    }
+  }
+  static add(listAdded){
+    console.log(`added ${listAdded} to your TODO list`)
+  }
+  static findById(dataShowed){
+    console.log(`${dataShowed.id}: ${dataShowed.task}`)
+  }
+  static deleteById(dataShowed){
+    //console.log(`${dataShowed.id}: ${dataShowed.task} deleted from your TODO list`)
+    console.log(dataShowed)
   }
 
 
