@@ -1,1 +1,25 @@
-[]
+[
+  {
+    "task": "Tidur sampai minggu depan",
+    "status": false,
+    "createdAt": 1525863933293,
+    "completedAt": null,
+    "tags": [
+      "good",
+      "vibe"
+    ],
+    "id": 1
+  },
+  {
+    "task": "Jalan-jalan ke mana saja",
+    "status": true,
+    "createdAt": 1525865793415,
+    "completedAt": 1525866020270,
+    "tags": [
+      "minum",
+      "kenyang",
+      "capek"
+    ],
+    "id": 2
+  }
+]
