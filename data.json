@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "id": 1,
+    "content": "makan",
+    "status": "uncompleted",
+    "createdAt": "2018-05-09T06:02:27.318Z",
+    "completedIn": null,
+    "tags": [
+      "makan"
+    ]
+  },
+  {
+    "id": 2,
+    "content": "minum",
+    "status": "completed",
+    "createdAt": "2018-05-09T06:02:34.782Z",
+    "completedIn": "2018-05-09T08:01:24.671Z",
+    "tags": [
+      "makan",
+      "hijau",
+      "minum"
+    ]
+  },
+  {
+    "id": 3,
+    "content": "main",
+    "status": "uncompleted",
+    "createdAt": "2018-05-09T06:02:38.407Z",
+    "completedIn": null,
+    "tags": [
+      "minum"
+    ]
+  },
+  {
+    "id": 4,
+    "content": "senang",
+    "status": "completed",
+    "createdAt": "2018-05-09T09:41:01.799Z",
+    "completedIn": "2018-05-09T10:50:59.163Z",
+    "tags": []
+  },
+  {
+    "id": 5,
+    "content": "gaming",
+    "status": "completed",
+    "createdAt": "2018-05-09T10:51:25.873Z",
+    "completedIn": "2018-05-09T12:13:54.407Z",
+    "tags": []
+  }
+]
